@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.xpit.model.services.DBService;
+import com.xpit.model.services.EmailService;
+import com.xpit.model.services.MockEmailService;
 
 //Configuração do ambiente de teste com banco de dados h2 im memory que chama DBService e efetua a instanciacao/persistencia dos dados8082
 @Configuration
@@ -26,6 +28,11 @@ public class TestConfig {
 	public boolean instantiateDatabase() throws ParseException {
 		dbService.instantiateTestDatabase();
 		return true;
+	}
+	
+	@Bean
+	public EmailService emailService() {
+		return new MockEmailService();
 	}
 	
 
