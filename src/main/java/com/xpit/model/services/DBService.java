@@ -1,5 +1,12 @@
 package com.xpit.model.services;
 
+/* Back End - API REST 
+ * Service - Camada de Servicos do Controlador Rest 
+ * //Classe responsavel por instanciar os dados conforme profile 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -31,7 +38,6 @@ import com.xpit.model.repositories.PedidoRepository;
 import com.xpit.model.repositories.ProdutoRepository;
 
 
-//Classe responsavel por instanciar os dados de teste no banco h2 in memory - Profile de test
 @Service
 public class DBService {
 

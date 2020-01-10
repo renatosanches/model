@@ -1,5 +1,12 @@
 package com.xpit.model.resources.exceptions;
 
+/* Back End - API REST 
+ * Exeception Resource- Endpoint do Controlador Rest : ValidationError = Personalizando o retorno da validacao 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
+
 import java.util.ArrayList;
 import java.util.List;
 //Personalizando o retorno da validacao

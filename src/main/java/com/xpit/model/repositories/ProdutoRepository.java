@@ -1,5 +1,11 @@
 package com.xpit.model.repositories;
 
+/* Back End - API REST
+ * Interface Camada de Acesso a dados Repositorio : Produto
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.List;
 
 import org.springframework.data.domain.Page;

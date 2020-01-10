@@ -1,8 +1,10 @@
 package com.xpit.model.resources;
-/* API REST - Pedidos
- * Java + Spring Boot
+
+/* Back End - API REST 
+ * Resource- Endpoint do Controlador Rest:  Pedidos
+ * Java + Spring Framework
  * Renato Sanches - XP IT Tecnologia 
- */ 
+ */
 
 import java.net.URI;
 

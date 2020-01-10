@@ -1,5 +1,10 @@
 package com.xpit.model;
 
+/* Back End - API REST
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

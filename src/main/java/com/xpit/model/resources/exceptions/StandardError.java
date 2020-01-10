@@ -1,5 +1,11 @@
 package com.xpit.model.resources.exceptions;
 
+/* Back End - API REST 
+ * Exeception Resource- Endpoint do Controlador Rest : StandardError = Objeto que recebe o erro 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.io.Serializable;
 
 //Objeto que recebe o erro

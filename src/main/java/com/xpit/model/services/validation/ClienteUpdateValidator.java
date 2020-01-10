@@ -1,5 +1,13 @@
 package com.xpit.model.services.validation;
 
+/* Back End - API REST 
+ * Service Validation - Validação Camada de Servicos do Controlador Rest 
+ * Interface para criação de Anotação customizada
+ * ClienteUpdateValidator é  a classe que implementa o ClienteUpdate
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

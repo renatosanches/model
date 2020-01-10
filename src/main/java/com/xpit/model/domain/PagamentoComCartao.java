@@ -1,5 +1,10 @@
 package com.xpit.model.domain;
 
+/* Back End - API REST
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;

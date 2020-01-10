@@ -1,5 +1,10 @@
 package com.xpit.model.domain.enums;
 
+/* Back End - API REST
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 public enum TipoCliente {
 	
 	PESSOAFISICA(1, "Pessoa Física"),

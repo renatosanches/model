@@ -1,5 +1,11 @@
 package com.xpit.model.resources.utils;
 
+/* Back End - API REST 
+ * Utils Resource- Endpoint do Controlador Rest : Efetua o decode de parametros da API Rest 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;

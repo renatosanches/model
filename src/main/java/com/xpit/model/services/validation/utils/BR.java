@@ -1,8 +1,16 @@
 package com.xpit.model.services.validation.utils;
 
-//Fonte: https://gist.github.com/adrianoluis/5043397d378ae506d87366abb0ab4e30
-//Validacao CPF e CNPJ
+/* Back End - API REST 
+ * Service Validation - Validação Camada de Servicos do Controlador Rest 
+ * A Classe BR implementa validacao do CPF e CNPJ 
+ * Java + Spring Framework
+ * Thanks Adriano Rocha 
+ * Fonte: https://gist.github.com/adrianoluis/5043397d378ae506d87366abb0ab4e30 * 
+ * Renato Sanches - XP IT Tecnologia 
+ */
 
+
+//Validacao CPF e CNPJ
 public class BR {
 	// CPF
     private static final int[] weightSsn = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};

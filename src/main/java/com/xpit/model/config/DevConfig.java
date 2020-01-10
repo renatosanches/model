@@ -1,5 +1,10 @@
 package com.xpit.model.config;
 
+/* Back End - API REST
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.text.ParseException;
 
 import org.springframework.beans.factory.annotation.Autowired;

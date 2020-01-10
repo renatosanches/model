@@ -1,5 +1,11 @@
 package com.xpit.model.dto;
 
+/* Back End - API REST
+ * Classes DTO - Data Transfer Objetcs
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.io.Serializable;
 
 

@@ -1,5 +1,11 @@
 package com.xpit.model.resources.exceptions;
 
+/* Back End - API REST 
+ * Exeception Resource- Endpoint do Controlador Rest interceptador 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.ObjectNotFoundException;

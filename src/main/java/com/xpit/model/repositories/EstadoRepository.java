@@ -1,9 +1,10 @@
 package com.xpit.model.repositories;
 
-/* Interface Camada de Acesso a dados Repositorio : Categoria 
- * Java + Spring Boot
+/* Back End - API REST
+ * Interface Camada de Acesso a dados Repositorio : Estado
+ * Java + Spring Framework
  * Renato Sanches - XP IT Tecnologia 
- */ 
+ */
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

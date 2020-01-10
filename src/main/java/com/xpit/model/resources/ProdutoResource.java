@@ -1,5 +1,11 @@
 package com.xpit.model.resources;
 
+/* Back End - API REST 
+ * Resource- Endpoint do Controlador Rest:  Produto
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

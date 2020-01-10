@@ -1,8 +1,11 @@
 package com.xpit.model.resources;
-/* API REST - Categorias
- * Java + Spring Boot
+
+/* Back End - API REST 
+ * Resource- Endpoint do Controlador Rest:  Categorias
+ * Java + Spring Framework
  * Renato Sanches - XP IT Tecnologia 
  */
+
 
 import java.net.URI;
 import java.util.List;
@@ -25,7 +28,7 @@ import com.xpit.model.domain.Categoria;
 import com.xpit.model.dto.CategoriaDTO;
 import com.xpit.model.services.CategoriaService;
 
-//Indica que este é um contrlador rest
+//Indica que este é um controlador rest
 @RestController
 //endereço do endpoint REST 
 @RequestMapping(value = "/categorias")

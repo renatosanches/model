@@ -1,5 +1,13 @@
 package com.xpit.model.services;
 
+/* Back End - API REST 
+ * Service - Camada de Servicos do Controlador Rest 
+ * Classe responsavel por CRUD dados Repositorio : Pedido 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
+
 import java.util.Date;
 import java.util.Optional;
 
@@ -14,12 +22,6 @@ import com.xpit.model.repositories.ItemPedidoRepository;
 import com.xpit.model.repositories.PagamentoRepository;
 import com.xpit.model.repositories.PedidoRepository;
 import com.xpit.model.services.exceptions.ObjectNotFoundException;
-
-
-/* Classe responsavel por consultar dados Repositorio : Pedido 
- * Java + Spring Boot
- * Renato Sanches - XP IT Tecnologia 
- */ 
 
 @Service
 public class PedidoService {

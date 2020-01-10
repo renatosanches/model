@@ -1,5 +1,11 @@
 package com.xpit.model.resources.exceptions;
 
+/* Back End - API REST 
+ * Exeception Resource- Endpoint do Controlador Rest FieldMessage 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.io.Serializable;
 
 //Personalizando o retorno da validacao

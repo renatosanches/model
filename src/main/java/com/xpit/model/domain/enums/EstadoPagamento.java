@@ -1,5 +1,10 @@
 package com.xpit.model.domain.enums;
 
+/* Back End - API REST
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 public enum EstadoPagamento {
 
 	PENDENTE(1, "Pendente"), QUITADO(2, "Quitado"), CANCELADO(3, "Cancelado");

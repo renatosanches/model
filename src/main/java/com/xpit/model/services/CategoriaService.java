@@ -1,5 +1,12 @@
 package com.xpit.model.services;
 
+/* Back End - API REST 
+ * Service - Camada de Servicos do Controlador Rest 
+ * Classe responsavel por CRUD dados Repositorio : Categoria 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +22,6 @@ import com.xpit.model.dto.CategoriaDTO;
 import com.xpit.model.repositories.CategoriaRepository;
 import com.xpit.model.services.exceptions.DataIntegrityException;
 import com.xpit.model.services.exceptions.ObjectNotFoundException;
-
-/* Classe responsavel por consultar dados Repositorio : Categoria 
- * Java + Spring Boot
- * Renato Sanches - XP IT Tecnologia 
- */
 
 @Service
 public class CategoriaService {

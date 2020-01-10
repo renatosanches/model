@@ -1,5 +1,12 @@
 package com.xpit.model.services;
 
+/* Back End - API REST 
+ * Service - Camada de Servicos do Controlador Rest
+ * Classe responsavel por Inserir a data de vencimento 7 dias pagamento com boleto
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.Calendar;
 import java.util.Date;
 

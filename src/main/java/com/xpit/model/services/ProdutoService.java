@@ -1,5 +1,12 @@
 package com.xpit.model.services;
 
+/* Back End - API REST 
+ * Service - Camada de Servicos do Controlador Rest 
+ * Classe responsavel por CRUD dados Repositorio : Pedido 
+ * Java + Spring Framework
+ * Renato Sanches - XP IT Tecnologia 
+ */
+
 import java.util.List;
 import java.util.Optional;
 
