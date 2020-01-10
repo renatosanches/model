@@ -1,6 +1,6 @@
 package com.xpit.model;
 
-/* Back End - API REST
+/* Back End - API REST para App Mobile Pedido 
  * Java + Spring Framework
  * Renato Sanches - XP IT Tecnologia 
  */

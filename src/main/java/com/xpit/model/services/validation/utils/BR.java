@@ -5,7 +5,7 @@ package com.xpit.model.services.validation.utils;
  * A Classe BR implementa validacao do CPF e CNPJ 
  * Java + Spring Framework
  * Thanks Adriano Rocha 
- * Fonte: https://gist.github.com/adrianoluis/5043397d378ae506d87366abb0ab4e30 * 
+ * Fonte: https://gist.github.com/adrianoluis/5043397d378ae506d87366abb0ab4e30 
  * Renato Sanches - XP IT Tecnologia 
  */
 
