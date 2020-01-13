@@ -9,8 +9,16 @@ package com.xpit.model.services;
 
 import java.util.Date;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
 import com.xpit.model.domain.Pedido;
 
@@ -19,6 +27,12 @@ public abstract class AbstractEmailService implements EmailService {
 	// Framework busca o valor do sender do arquivo application.properties
 	@Value("${default.sender}")
 	private String sender;
+	
+	@Autowired
+	private TemplateEngine templateEngine;
+	
+	@Autowired
+	private JavaMailSender javaMailSender;
 
 	//Envia o email
 	@Override
@@ -36,5 +50,42 @@ public abstract class AbstractEmailService implements EmailService {
 		sm.setSentDate(new Date(System.currentTimeMillis()));
 		sm.setText(obj.toString());
 		return sm;
+	}
+	
+//	métodos responsáveis por retornar o HTML preenchido com os dados de um pedido, a partir do template Thymeleaf
+	
+	protected String htmlFromTemplatePedido(Pedido obj) {
+		Context context = new Context();
+		context.setVariable("pedido", obj);
+		//template tymeleaf localicacao
+		templateEngine.process("email/confirmacaoPedido", context);
+		return templateEngine.process("email/confirmacaoPedido", context);
+	}
+	
+	@Override
+	public void sendOrderConfirmationHtmlEmail(Pedido obj) {
+		//Tratando a excecao, se ocorrer um erro ele envia o email texto plano
+		try {
+			MimeMessage mm = prepareMimeMessageFromPedido(obj);
+			sendHtmlEmail(mm);
+		}
+		catch (MessagingException e) {
+			sendOrderConfirmationEmail(obj);
+		}
+	}
+
+	protected MimeMessage prepareMimeMessageFromPedido(Pedido obj) throws MessagingException {
+		//Objeto Injetado javaMailSender para enviar email html
+		MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+		MimeMessageHelper mmh = new MimeMessageHelper(mimeMessage, true);
+		//Para quem vai o email
+		mmh.setTo(obj.getCliente().getEmail());
+		//remetente do email (sender) valor injetado
+		mmh.setFrom(sender);
+		mmh.setSubject("Pedido confirmado! Código: " + obj.getId());
+		mmh.setSentDate(new Date(System.currentTimeMillis()));
+		//Email Processado pelo Tymeleaf
+		mmh.setText(htmlFromTemplatePedido(obj), true);
+		return mimeMessage;
 	}
 }

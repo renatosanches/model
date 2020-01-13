@@ -14,6 +14,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.xpit.model.services.DBService;
+import com.xpit.model.services.EmailService;
+import com.xpit.model.services.SmtpEmailService;
 
 //Configuração do ambiente de Desenvolvimento com banco de dados Mysql que chama DBService e efetua a instanciacao/persistencia dos dados 8082
 @Configuration
@@ -38,6 +40,12 @@ public class DevConfig {
 
 		dbService.instantiateTestDatabase();
 		return true;
+	}
+	
+	// Cria um Bean para retornar SMTP mail Service
+	@Bean
+	public EmailService emailService() {
+		return new SmtpEmailService();
 	}
 	
 

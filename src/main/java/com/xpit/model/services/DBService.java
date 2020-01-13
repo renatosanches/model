@@ -12,6 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.xpit.model.domain.Categoria;
@@ -40,6 +41,9 @@ import com.xpit.model.repositories.ProdutoRepository;
 
 @Service
 public class DBService {
+	
+	@Autowired // Injetando BCryptPasswordEncoder para encodar senha
+	private BCryptPasswordEncoder pe;
 
 	@Autowired // Vai ser instanciado automaticamente CategoriaRepository
 	private CategoriaRepository categoriaRepository;
@@ -130,8 +134,8 @@ public class DBService {
 		estadoRepository.saveAll(Arrays.asList(est1, est2));
 		cidadeRepository.saveAll(Arrays.asList(c1, c2, c3));
 
-		Cliente cli1 = new Cliente(null, "Renato Sanches", "webfactorysx@gmail.com", "16588302029",
-				TipoCliente.PESSOAFISICA);
+		Cliente cli1 = new Cliente(null, "Renato Sanches", "newswebmundi1@gmail.com", "16588302029",
+				TipoCliente.PESSOAFISICA, pe.encode("123"));
 
 		cli1.getTelefones().addAll(Arrays.asList("99667666", "22817142"));
 

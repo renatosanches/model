@@ -1,5 +1,7 @@
 package com.xpit.model.services;
 
+import javax.mail.internet.MimeMessage;
+
 /* Back End - API REST 
  * Service - Camada de Servicos do Controlador Rest 
  * Interface (padrão Strategy) - Responsavel pelos servicos de email (operacões oferecidas do servico de e-mail) 
@@ -14,7 +16,11 @@ import com.xpit.model.domain.Pedido;
 public interface EmailService {
 
 	void sendOrderConfirmationEmail(Pedido obj);
-
+    //Email com texto plano
 	void sendEmail(SimpleMailMessage msg);
+	
+	void sendOrderConfirmationHtmlEmail(Pedido obj);
+	//Email HTML
+	void sendHtmlEmail(MimeMessage msg);
 	
 }

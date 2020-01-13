@@ -1,5 +1,7 @@
 package com.xpit.model.services;
 
+import javax.mail.internet.MimeMessage;
+
 /* Back End - API REST 
  * Service - Camada de Servicos do Controlador Rest 
  * Classe Simulacao do envio de email - Responsavel pelos servicos de email (operacões oferecidas do servico de e-mail) 
@@ -23,6 +25,14 @@ public class MockEmailService extends AbstractEmailService {
 		LOG.info("Simulando envio de email...");
 		LOG.info(msg.toString());
 		LOG.info("Email enviado");
+	}
+
+	@Override
+	public void sendHtmlEmail(MimeMessage msg) {
+		LOG.info("Simulando envio de email HTML...");
+		LOG.info(msg.toString());
+		LOG.info("Email enviado");
+		
 	}
 	
 
