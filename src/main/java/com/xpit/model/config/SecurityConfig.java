@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	// libera somente GET, ou seja, nao permite POST ou DELETE
 	private static final String[] PUBLIC_MATCHERS_GET = {
 			"/produtos/**",
-			"/categorias/**"
+			"/categorias/**",
+			"/clientes/**"
 	};
 
 	//metodo que autoriza acesso aos endpoints PUBLIC_MATCHERS e PUBLIC_MATCHERS_GET
