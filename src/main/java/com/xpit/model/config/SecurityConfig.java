@@ -26,6 +26,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.xpit.model.security.JWTAuthenticationFilter;
+import com.xpit.model.security.JWTAuthorizationFilter;
 import com.xpit.model.security.JWTUtil;
 
 @Configuration
@@ -68,6 +69,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.anyRequest().authenticated();
 //		registra o filtro de autenticação JWT
 		http.addFilter(new JWTAuthenticationFilter(authenticationManager(), jwtUtil));
+//		registra o filtro de autorizacão JWT e verifica se o token é valido		
+		http.addFilter(new JWTAuthorizationFilter(authenticationManager(), jwtUtil, userDetailsService));
 		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
