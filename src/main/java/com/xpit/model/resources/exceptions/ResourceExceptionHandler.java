@@ -16,6 +16,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.xpit.model.services.exceptions.AuthorizationException;
 import com.xpit.model.services.exceptions.DataIntegrityException;
 
 //A anotação @ControllerAdvice permite que você lide com exceções em todo o aplicativo, não apenas em um controlador individual. 
@@ -49,5 +50,13 @@ public class ResourceExceptionHandler {
 		}		
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
 	}
+	// Tratar a exceção de autorizacao na camada resource Acesso negado
+	@ExceptionHandler(AuthorizationException.class)
+	public ResponseEntity<StandardError> authorization(AuthorizationException e, HttpServletRequest request) {
+
+		StandardError err = new StandardError(HttpStatus.FORBIDDEN.value(), e.getMessage(), System.currentTimeMillis());
+		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(err);
+	}
+	
 
 }

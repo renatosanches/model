@@ -22,11 +22,14 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xpit.model.domain.Cidade;
 import com.xpit.model.domain.Cliente;
 import com.xpit.model.domain.Endereco;
+import com.xpit.model.domain.enums.Perfil;
 import com.xpit.model.domain.enums.TipoCliente;
 import com.xpit.model.dto.ClienteDTO;
 import com.xpit.model.dto.ClienteNewDTO;
 import com.xpit.model.repositories.ClienteRepository;
 import com.xpit.model.repositories.EnderecoRepository;
+import com.xpit.model.security.UserSS;
+import com.xpit.model.services.exceptions.AuthorizationException;
 import com.xpit.model.services.exceptions.DataIntegrityException;
 import com.xpit.model.services.exceptions.ObjectNotFoundException;
 
@@ -44,6 +47,14 @@ public class ClienteService {
 	private EnderecoRepository enderecoRepository;
 	
 	public Cliente find(Integer id) {
+		
+		//se o cliente logado não for ADMIN e não for o cliente do id solicitado, lança uma exceção
+		UserSS user = UserService.authenticated();
+		if (user==null || !user.hasRole(Perfil.ADMIN) && !id.equals(user.getId())) {
+			throw new AuthorizationException("Acesso negado");
+		}
+
+		
 		Optional<Cliente> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Objeto não encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));

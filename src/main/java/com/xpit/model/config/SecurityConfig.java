@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			"/clientes/**"
 	};
 
-	//metodo que autoriza acesso aos endpoints PUBLIC_MATCHERS e PUBLIC_MATCHERS_GET
+	//metodo que autoriza acesso aos endpoints PUBLIC_MATCHERS, PUBLIC_MATCHERS_GET, PUBLIC_MATCHERS_POST
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
