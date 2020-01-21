@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Arquivos de configuracao ###
+model/src/main/resources/*
