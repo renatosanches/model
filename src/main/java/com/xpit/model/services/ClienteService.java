@@ -1,5 +1,7 @@
 package com.xpit.model.services;
 
+import java.net.URI;
+
 /* Back End - API REST 
  * Service - Camada de Servicos do Controlador Rest  
  * Classe responsavel por CRUD dados Repositorio : Cliente 
@@ -18,6 +20,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.xpit.model.domain.Cidade;
 import com.xpit.model.domain.Cliente;
@@ -45,6 +48,9 @@ public class ClienteService {
 	
 	@Autowired
 	private EnderecoRepository enderecoRepository;
+	
+	@Autowired
+	private S3Service s3Service;
 	
 	public Cliente find(Integer id) {
 		
@@ -105,6 +111,11 @@ public class ClienteService {
 	private void updateData(Cliente newObj, Cliente obj) {
 		newObj.setNome(obj.getNome());
 		newObj.setEmail(obj.getEmail());
+	}
+	
+	//Upload da foto do cliente
+	public URI uploadProfilePicture(MultipartFile multipartFile) {
+		return s3Service.uploadFile(multipartFile);
 	}
 	
 	//Sobrecarga fromDTO
