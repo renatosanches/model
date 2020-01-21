@@ -33,3 +33,4 @@ build/
 ### Arquivos de configuracao ###
 model/src/main/resources/*
 src/main/resources/*
+*.properties
