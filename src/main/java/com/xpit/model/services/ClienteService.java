@@ -61,6 +61,10 @@ public class ClienteService {
 	@Value("${img.prefix.client.profile}")
 	private String prefix;
 	
+	//configura o tamanho do arquivo de upload conforme app.properties
+	@Value("${img.profile.size}")
+	private Integer size;
+	
 	public Cliente find(Integer id) {
 		
 		//se o cliente logado não for ADMIN e não for o cliente do id solicitado, lança uma exceção
@@ -130,6 +134,10 @@ public class ClienteService {
 		}
 
 		BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+		// corta imagem e reduz tamanho
+		jpgImage = imageService.cropSquare(jpgImage);
+		jpgImage = imageService.resize(jpgImage, size);
+		
 		//monta nome do arquivo conforme prefixo do app.properties
 		String fileName = prefix + user.getId() + ".jpg";
 
